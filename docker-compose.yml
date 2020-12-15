@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+
+  mysql:
+    image: percona:8
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "spatial_tests"
+      MYSQL_DATABASE: "spatial_tests"

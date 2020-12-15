@@ -1,0 +1,72 @@
+name: "Continuous Integration"
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "master"
+
+env:
+  fail-fast: false
+
+jobs:
+
+  phpunit-mysql:
+    name: "PHPUnit with MySQL"
+    runs-on: "ubuntu-20.04"
+
+    strategy:
+      matrix:
+        php-version:
+          - "7.4"
+          - "8.0"
+        mysql-version:
+          - "5.7"
+          - "8.0"
+        include:
+          - php-version: "7.4"
+            mysql-version: "8.0"
+            custom-entrypoint: >-
+              --entrypoint sh mysql:8 -c "exec docker-entrypoint.sh mysqld --default-authentication-plugin=mysql_native_password"
+          - php-version: "8.0"
+            mysql-version: "8.0"
+            custom-entrypoint: >-
+              --entrypoint sh mysql:8 -c "exec docker-entrypoint.sh mysqld --default-authentication-plugin=mysql_native_password"
+
+    services:
+      mysql:
+        image: "mysql:${{ matrix.mysql-version }}"
+
+        options: >-
+          --health-cmd "mysqladmin ping --silent"
+          -e MYSQL_ROOT_PASSWORD=spatial_tests
+          -e MYSQL_DATABASE=spatial_tests
+          ${{ matrix.custom-entrypoint }}
+
+        ports:
+          - "3306:3306"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+        with:
+          fetch-depth: 2
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "${{ matrix.php-version }}"
+          coverage: "pcov"
+          ini-values: "zend.assertions=1"
+          extensions: "pdo_mysql"
+
+      - name: "Install dependencies with Composer"
+        uses: "ramsey/composer-install@v1"
+
+      - name: "Run PHPUnit"
+        run: "vendor/bin/phpunit -c phpunit.xml.dist --coverage-text --coverage-clover=coverage.xml"
+
+
+
+
+
