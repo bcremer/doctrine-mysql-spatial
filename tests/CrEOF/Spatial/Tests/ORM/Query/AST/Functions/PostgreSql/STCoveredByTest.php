@@ -40,7 +40,7 @@ use Doctrine\ORM\Query;
  */
 class STCoveredByTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::POLYGON_ENTITY);
         $this->supportsPlatform('postgresql');

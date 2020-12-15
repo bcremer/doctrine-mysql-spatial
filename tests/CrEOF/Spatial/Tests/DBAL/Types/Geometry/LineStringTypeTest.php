@@ -39,7 +39,7 @@ use CrEOF\Spatial\Tests\Fixtures\LineStringEntity;
  */
 class LineStringTypeTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::LINESTRING_ENTITY);
         parent::setUp();

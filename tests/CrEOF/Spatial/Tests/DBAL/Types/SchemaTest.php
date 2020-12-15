@@ -35,7 +35,7 @@ use CrEOF\Spatial\Tests\OrmTestCase;
  */
 class SchemaTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::GEOMETRY_ENTITY);
         $this->usesEntity(self::POINT_ENTITY);

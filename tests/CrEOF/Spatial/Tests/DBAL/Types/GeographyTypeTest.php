@@ -39,7 +39,7 @@ use CrEOF\Spatial\Tests\Fixtures\GeographyEntity;
  */
 class GeographyTypeTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::GEOGRAPHY_ENTITY);
         parent::setUp();

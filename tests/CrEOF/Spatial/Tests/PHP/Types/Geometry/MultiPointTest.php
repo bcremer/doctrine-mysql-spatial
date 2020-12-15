@@ -25,6 +25,7 @@ namespace CrEOF\Spatial\Tests\PHP\Types\Spatial\Geometry;
 
 use CrEOF\Spatial\PHP\Types\Geometry\MultiPoint;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
+use PHPUnit\Framework\TestCase;
 
 /**
  * MultiPoint object tests
@@ -34,7 +35,7 @@ use CrEOF\Spatial\PHP\Types\Geometry\Point;
  *
  * @group php
  */
-class MultiPointTest extends \PHPUnit_Framework_TestCase
+class MultiPointTest extends TestCase
 {
     public function testEmptyMultiPoint()
     {

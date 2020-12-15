@@ -38,7 +38,7 @@ use CrEOF\Spatial\Tests\Fixtures\GeoPointSridEntity;
  */
 class GeoPointSridTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::GEO_POINT_SRID_ENTITY);
         parent::setUp();

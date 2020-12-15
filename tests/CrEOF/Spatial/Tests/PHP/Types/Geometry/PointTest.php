@@ -24,6 +24,7 @@
 namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
 
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Point object tests
@@ -33,7 +34,7 @@ use CrEOF\Spatial\PHP\Types\Geometry\Point;
  *
  * @group php
  */
-class PointTest extends \PHPUnit_Framework_TestCase
+class PointTest extends TestCase
 {
 
     public function testGoodNumericPoint()

@@ -39,7 +39,7 @@ use Doctrine\ORM\Query;
  */
 class GeometryWalkerTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::LINESTRING_ENTITY);
         parent::setUp();

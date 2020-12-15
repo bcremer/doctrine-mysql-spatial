@@ -38,7 +38,7 @@ use Doctrine\ORM\Tools\SchemaTool;
  */
 class PlatformTest extends OrmMockTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (! Type::hasType('point')) {
             Type::addType('point', 'CrEOF\Spatial\DBAL\Types\Geometry\PointType');

@@ -41,7 +41,7 @@ use CrEOF\Spatial\Tests\OrmTestCase;
  */
 class MultiPolygonTypeTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::MULTIPOLYGON_ENTITY);
         parent::setUp();

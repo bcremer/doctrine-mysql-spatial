@@ -40,7 +40,7 @@ use Doctrine\ORM\Query;
  */
 class STDistanceSphereTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::POINT_ENTITY);
         $this->supportsPlatform('postgresql');

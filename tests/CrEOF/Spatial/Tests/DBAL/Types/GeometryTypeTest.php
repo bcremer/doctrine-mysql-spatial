@@ -41,7 +41,7 @@ use CrEOF\Spatial\Tests\Fixtures\NoHintGeometryEntity;
  */
 class GeometryTypeTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::GEOMETRY_ENTITY);
         $this->usesEntity(self::NO_HINT_GEOMETRY_ENTITY);

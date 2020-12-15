@@ -16,7 +16,7 @@ use CrEOF\Spatial\Tests\OrmTestCase;
  */
 class STSnapToGridTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::POINT_ENTITY);
         $this->supportsPlatform('postgresql');

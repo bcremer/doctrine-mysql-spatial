@@ -40,7 +40,7 @@ use Doctrine\ORM\Query;
  */
 class STDistanceTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::POINT_ENTITY);
         $this->usesEntity(self::GEOGRAPHY_ENTITY);

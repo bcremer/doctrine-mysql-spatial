@@ -39,7 +39,7 @@ use Doctrine\ORM\Query;
  */
 class GeomFromTextTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::GEOMETRY_ENTITY);
         $this->usesType('point');

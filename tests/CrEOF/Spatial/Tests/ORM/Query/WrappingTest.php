@@ -44,7 +44,7 @@ use Doctrine\ORM\Version;
  */
 class WrappingTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::GEOMETRY_ENTITY);
         $this->usesType('point');

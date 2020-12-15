@@ -44,7 +44,7 @@ use Doctrine\ORM\Query;
  */
 class STSummaryTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::GEOMETRY_ENTITY);
         $this->usesEntity(self::GEOGRAPHY_ENTITY);

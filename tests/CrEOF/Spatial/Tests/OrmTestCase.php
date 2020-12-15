@@ -34,6 +34,7 @@ use Doctrine\ORM\Configuration;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\Tools\SchemaTool;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Abstract ORM test class
@@ -41,7 +42,7 @@ use Doctrine\ORM\Tools\SchemaTool;
  * @author  Derek J. Lambert <dlambert@dereklambert.com>
  * @license http://dlambert.mit-license.org MIT
  */
-abstract class OrmTestCase extends \PHPUnit_Framework_TestCase
+abstract class OrmTestCase extends TestCase
 {
     const GEOMETRY_ENTITY         = 'CrEOF\Spatial\Tests\Fixtures\GeometryEntity';
     const NO_HINT_GEOMETRY_ENTITY = 'CrEOF\Spatial\Tests\Fixtures\NoHintGeometryEntity';
@@ -162,7 +163,7 @@ abstract class OrmTestCase extends \PHPUnit_Framework_TestCase
     /**
      * @throws UnsupportedPlatformException
      */
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         static::$connection = static::getConnection();
     }
@@ -173,7 +174,7 @@ abstract class OrmTestCase extends \PHPUnit_Framework_TestCase
      *
      * @throws UnsupportedPlatformException
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         if (count($this->supportedPlatforms) && ! isset($this->supportedPlatforms[$this->getPlatform()->getName()])) {
             $this->markTestSkipped(sprintf('No support for platform %s in test class %s.', $this->getPlatform()->getName(), get_class($this)));
@@ -360,7 +361,7 @@ abstract class OrmTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Teardown fixtures
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $this->sqlLoggerStack->enabled = false;
 
@@ -387,7 +388,7 @@ abstract class OrmTestCase extends \PHPUnit_Framework_TestCase
      * @throws \Exception
      * @todo: This needs cleanup
      */
-    protected function onNotSuccessfulTest(\Exception $e)
+    protected function onNotSuccessfulTest(\Exception $e): void
     {
         if (! $GLOBALS['opt_use_debug_stack'] || $e instanceof \PHPUnit_Framework_AssertionFailedError) {
             throw $e;

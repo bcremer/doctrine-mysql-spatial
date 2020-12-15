@@ -26,6 +26,8 @@ namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
 use CrEOF\Spatial\PHP\Types\Geometry\LineString;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
 use CrEOF\Spatial\PHP\Types\Geometry\MultiLineString;
+use PHPUnit\Framework\TestCase;
+
 /**
  * MultiLineString object tests
  *
@@ -34,7 +36,7 @@ use CrEOF\Spatial\PHP\Types\Geometry\MultiLineString;
  *
  * @group php
  */
-class MultiLineStringTest extends \PHPUnit_Framework_TestCase
+class MultiLineStringTest extends TestCase
 {
     public function testEmptyMultiLineString()
     {

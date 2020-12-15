@@ -40,7 +40,7 @@ use CrEOF\Spatial\Tests\Fixtures\GeoPolygonEntity;
  */
 class GeoPolygonTypeTest extends OrmTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->usesEntity(self::GEO_POLYGON_ENTITY);
         parent::setUp();

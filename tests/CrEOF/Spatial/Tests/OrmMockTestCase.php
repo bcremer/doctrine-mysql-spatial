@@ -6,15 +6,15 @@ use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\EntityManager;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Common test code
  */
-abstract class OrmMockTestCase extends \PHPUnit_Framework_TestCase
-{
+abstract class OrmMockTestCase extends TestCase {
     protected $mockEntityManager;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mockEntityManager = $this->getMockEntityManager();
     }

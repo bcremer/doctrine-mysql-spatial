@@ -7,6 +7,8 @@ use CrEOF\Spatial\PHP\Types\Geometry\LineString;
 use CrEOF\Spatial\PHP\Types\Geometry\MultiPolygon;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
 use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Polygon object tests
  *
@@ -15,7 +17,7 @@ use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
  *
  * @group php
  */
-class MultiPolygonTest extends \PHPUnit_Framework_TestCase
+class MultiPolygonTest extends TestCase
 {
     public function testEmptyMultiPolygon()
     {

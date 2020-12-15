@@ -26,6 +26,8 @@ namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
 use CrEOF\Spatial\PHP\Types\Geometry\LineString;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
 use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Polygon object tests
  *
@@ -34,7 +36,7 @@ use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
  *
  * @group php
  */
-class PolygonTest extends \PHPUnit_Framework_TestCase
+class PolygonTest extends TestCase
 {
     public function testEmptyPolygon()
     {
