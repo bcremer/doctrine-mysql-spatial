@@ -1,35 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
-<phpunit backupGlobals="false"
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          colors="true"
-         bootstrap="./tests/CrEOF/Spatial/Tests/TestInit.php"
-         beStrictAboutTestsThatDoNotTestAnything="true"
+         bootstrap="./vendor/autoload.php"
          beStrictAboutOutputDuringTests="true"
-         beStrictAboutChangesToGlobalState="true"
-        >
+         beStrictAboutChangesToGlobalState="true">
 
-    <testsuites>
-        <testsuite>
-            <directory>./tests/CrEOF/Spatial/Tests</directory>
-        </testsuite>
-    </testsuites>
+    <testsuite name="Testsuite">
+        <directory>./tests</directory>
+    </testsuite>
 
     <php>
-        <var name="db_type" value="pdo_pgsql"/>
-        <var name="db_host" value="localhost" />
-        <var name="db_username" value="postgres" />
-        <var name="db_password" value="" />
-        <var name="db_name" value="spatial_tests" />
-        <var name="db_port" value="5432" />
-        <var name="opt_mark_sql" value="true" />        <!-- Execute dummy SELECT statement before each test to mark DB query log -->
-        <var name="opt_use_debug_stack" value="true" /> <!-- Enable SQLLoggerStack and query logging exception in tests -->
+        <env name="db_type" value="pdo_mysql"/>
+        <env name="db_host" value="127.0.0.1" />
+        <env name="db_username" value="root" />
+        <env name="db_password" value="spatial_tests" />
+        <env name="db_name" value="spatial_tests" />
+        <env name="db_port" value="3306" />
+
+        <ini name="display_errors" value="On" />
+        <ini name="display_startup_errors" value="On" />
+        <ini name="error_reporting" value="-1" />
     </php>
 
-    <filter>
-        <whitelist>
-            <directory suffix=".php">./lib/</directory>
-            <exclude>
-                <directory suffix=".php">./tests/CrEOF/Spatial/Tests</directory>
-            </exclude>
-        </whitelist>
-    </filter>
+    <coverage>
+        <include>
+            <directory suffix=".php">./src/</directory>
+        </include>
+        <exclude>
+            <directory suffix=".php">test/</directory>
+        </exclude>
+    </coverage>
 </phpunit>
