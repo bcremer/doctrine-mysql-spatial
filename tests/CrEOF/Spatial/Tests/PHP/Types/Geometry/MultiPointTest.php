@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\PHP\Types\Spatial\Geometry;
+namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
 
 use CrEOF\Spatial\PHP\Types\Geometry\MultiPoint;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
@@ -147,12 +147,11 @@ class MultiPointTest extends TestCase
 
     /**
      * Test MultiPoint bad parameter
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Invalid MultiPoint Point value of type "integer"
      */
     public function testBadLineString()
     {
+        $this->expectException(\CrEOF\Spatial\Exception\InvalidValueException::class);
+        $this->expectExceptionMessage('Invalid MultiPoint Point value of type "integer"');
         new MultiPoint(array(1, 2, 3 ,4));
     }
 

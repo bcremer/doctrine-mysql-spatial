@@ -174,12 +174,10 @@ class GeometryTypeTest extends OrmTestCase
         $this->assertEquals($entity, $queryEntity);
     }
 
-    /**
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Geometry column values must implement GeometryInterface
-     */
     public function testBadGeometryValue()
     {
+        $this->expectException(\CrEOF\Spatial\Exception\InvalidValueException::class);
+        $this->expectExceptionMessage('Geometry column values must implement GeometryInterface');
         $entity = new NoHintGeometryEntity();
 
         $entity->setGeometry('POINT(0 0)');

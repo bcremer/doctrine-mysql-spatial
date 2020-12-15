@@ -23,6 +23,7 @@
 
 namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
 
+use CrEOF\Spatial\Exception\InvalidValueException;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
 use PHPUnit\Framework\TestCase;
 
@@ -93,89 +94,85 @@ class PointTest extends TestCase
 
     /**
      * Test bad string parameters - invalid latitude direction
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage [Syntax Error] line 0, col 8: Error: Expected CrEOF\Geo\String\Lexer::T_INTEGER or CrEOF\Geo\String\Lexer::T_FLOAT, got "Q" in value "84:26:46Q"
      */
     public function testBadLatitudeDirection()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage(
+            '[Syntax Error] line 0, col 8: Error: Expected CrEOF\Geo\String\Lexer::T_INTEGER or CrEOF\Geo\String\Lexer::T_FLOAT, got "Q" in value "84:26:46Q"'
+        );
         new Point('100:56:55W', '84:26:46Q');
     }
 
     /**
      * Test bad string parameters - latitude degrees greater that 90
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage [Range Error] Error: Degrees out of range -90 to 90 in value "92:26:46N"
      */
     public function testBadLatitudeDegrees()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage('[Range Error] Error: Degrees out of range -90 to 90 in value "92:26:46N"');
         new Point('79:56:55W', '92:26:46N');
     }
 
     /**
      * Test bad string parameters - latitude minutes greater than 59
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage [Range Error] Error: Minutes greater than 60 in value "84:64:46N"
      */
     public function testBadLatitudeMinutes()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage('[Range Error] Error: Minutes greater than 60 in value "84:64:46N"');
         new Point('108:42:55W', '84:64:46N');
     }
 
     /**
      * Test bad string parameters - latitude seconds greater than 59
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage [Range Error] Error: Seconds greater than 60 in value "84:23:75N"
      */
     public function testBadLatitudeSeconds()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage("[Range Error] Error: Seconds greater than 60 in value \"84:23:75N\"");
         new Point('108:42:55W', '84:23:75N');
     }
 
     /**
      * Test bad string parameters - invalid longitude direction
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage [Syntax Error] line 0, col 9: Error: Expected CrEOF\Geo\String\Lexer::T_INTEGER or CrEOF\Geo\String\Lexer::T_FLOAT, got "P" in value "100:56:55P"
      */
     public function testBadLongitudeDirection()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage(
+            "[Syntax Error] line 0, col 9: Error: Expected CrEOF\Geo\String\Lexer::T_INTEGER or CrEOF\Geo\String\Lexer::T_FLOAT, got \"P\" in value \"100:56:55P\""
+        );
         new Point('100:56:55P', '84:26:46N');
     }
 
     /**
      * Test bad string parameters - longitude degrees greater than 180
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage [Range Error] Error: Degrees out of range -180 to 180 in value "190:56:55W"
      */
     public function testBadLongitudeDegrees()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage('[Range Error] Error: Degrees out of range -180 to 180 in value "190:56:55W"');
         new Point('190:56:55W', '84:26:46N');
     }
 
     /**
      * Test bad string parameters - longitude minutes greater than 59
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage [Range Error] Error: Minutes greater than 60 in value "108:62:55W"
      */
     public function testBadLongitudeMinutes()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage('[Range Error] Error: Minutes greater than 60 in value "108:62:55W"');
         new Point('108:62:55W', '84:26:46N');
     }
 
     /**
      * Test bad string parameters - longitude seconds greater than 59
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage [Range Error] Error: Seconds greater than 60 in value "108:53:94W"
      */
     public function testBadLongitudeSeconds()
     {
+        $this->expectExceptionMessage('[Range Error] Error: Seconds greater than 60 in value "108:53:94W"');
+        $this->expectException(InvalidValueException::class);
         new Point('108:53:94W', '84:26:46N');
     }
 
@@ -212,55 +209,56 @@ class PointTest extends TestCase
         $this->assertEquals($expected, (string) $point);
     }
 
-    /**
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "5", "5", "5", "5"
-     */
     public function testPointTooManyArguments()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage(
+            'Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "5", "5", "5", "5"'
+        );
         new Point(5, 5, 5, 5);
     }
 
-    /**
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: Array, Array, "1234"
-     */
     public function testPointWrongArgumentTypes()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage(
+            'Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: Array, Array, "1234"'
+        );
         new Point(array(), array(), '1234');
     }
 
     /**
      * Test bad string parameters - No parameters
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct:
      */
     public function testMissingArguments()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage('Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct');
         new Point();
     }
 
 
     /**
      * Test bad string parameters - Two invalid parameters
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "", ""
      */
     public function testTwoInvalidArguments()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage(
+            'Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "", ""'
+        );
         new Point(null, null);
     }
 
     /**
      * Test bad string parameters - More than 3 parameters
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "1", "2", "3", "4", "", "5"
      */
     public function testUnusedArguments()
     {
+        $this->expectException(InvalidValueException::class);
+        $this->expectExceptionMessage(
+            'Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "1", "2", "3", "4", "", "5"'
+        );
         new Point(1, 2, 3, 4, null, 5);
     }
 

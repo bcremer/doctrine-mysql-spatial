@@ -27,7 +27,6 @@ use CrEOF\Spatial\Tests\OrmMockTestCase;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\Tools\SchemaTool;
-
 /**
  * Spatial platform tests
  *
@@ -36,26 +35,21 @@ use Doctrine\ORM\Tools\SchemaTool;
  *
  * @group geometry
  */
-class PlatformTest extends OrmMockTestCase
+class PlatformTest extends \CrEOF\Spatial\Tests\OrmMockTestCase
 {
     public function setUp(): void
     {
-        if (! Type::hasType('point')) {
-            Type::addType('point', 'CrEOF\Spatial\DBAL\Types\Geometry\PointType');
+        if (!\Doctrine\DBAL\Types\Type::hasType('point')) {
+            \Doctrine\DBAL\Types\Type::addType('point', 'CrEOF\Spatial\DBAL\Types\Geometry\PointType');
         }
-
         parent::setUp();
     }
-
-    /**
-     * @expectedException        \CrEOF\Spatial\Exception\UnsupportedPlatformException
-     * @expectedExceptionMessage DBAL platform "YourSQL" is not currently supported.
-     */
     public function testUnsupportedPlatform()
     {
-        $metadata   = $this->getMockEntityManager()->getClassMetadata('CrEOF\Spatial\Tests\Fixtures\PointEntity');
-        $schemaTool = new SchemaTool($this->getMockEntityManager());
-
+        $this->expectException(\CrEOF\Spatial\Exception\UnsupportedPlatformException::class);
+        $this->expectExceptionMessage("DBAL platform \"YourSQL\" is not currently supported.");
+        $metadata = $this->getMockEntityManager()->getClassMetadata('CrEOF\Spatial\Tests\Fixtures\PointEntity');
+        $schemaTool = new \Doctrine\ORM\Tools\SchemaTool($this->getMockEntityManager());
         $schemaTool->createSchema(array($metadata));
     }
 }

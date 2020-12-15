@@ -20,8 +20,14 @@
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
-        "psr-0": {
-            "CrEOF\\Spatial": "lib/"
+        "psr-4": {
+            "CrEOF\\Spatial\\": "lib/CrEOF/Spatial"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CrEOF\\Spatial\\Tests\\": "tests/CrEOF/Spatial/Tests"
         }
     }
+
 }

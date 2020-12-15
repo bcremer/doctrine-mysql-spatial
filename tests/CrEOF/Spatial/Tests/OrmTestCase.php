@@ -388,9 +388,9 @@ abstract class OrmTestCase extends TestCase
      * @throws \Exception
      * @todo: This needs cleanup
      */
-    protected function onNotSuccessfulTest(\Exception $e): void
+    protected function onNotSuccessfulTest(\Throwable $e): void
     {
-        if (! $GLOBALS['opt_use_debug_stack'] || $e instanceof \PHPUnit_Framework_AssertionFailedError) {
+        if (! $GLOBALS['opt_use_debug_stack'] || $e instanceof \PHPUnit\Framework\AssertionFailedError) {
             throw $e;
         }
 

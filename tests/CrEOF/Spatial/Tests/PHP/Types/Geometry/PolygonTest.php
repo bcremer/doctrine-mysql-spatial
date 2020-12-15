@@ -228,12 +228,11 @@ class PolygonTest extends TestCase
 
     /**
      * Test Polygon with open ring
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Invalid polygon, ring "(0 0,10 0,10 10,0 10)" is not closed
      */
     public function testOpenPolygonRing()
     {
+        $this->expectException(\CrEOF\Spatial\Exception\InvalidValueException::class);
+        $this->expectExceptionMessage('Invalid polygon, ring "(0 0,10 0,10 10,0 10)" is not closed');
         $rings = array(
             new LineString(array(
                 new Point(0, 0),

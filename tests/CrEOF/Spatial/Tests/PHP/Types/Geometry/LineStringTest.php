@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\PHP\Types\Spatial\Geometry;
+namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
 
 use CrEOF\Spatial\PHP\Types\Geometry\LineString;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
@@ -147,12 +147,11 @@ class LineStringTest extends TestCase
 
     /**
      * Test LineString bad parameter
-     *
-     * @expectedException        \CrEOF\Spatial\Exception\InvalidValueException
-     * @expectedExceptionMessage Invalid LineString Point value of type "integer"
      */
     public function testBadLineString()
     {
+        $this->expectException(\CrEOF\Spatial\Exception\InvalidValueException::class);
+        $this->expectExceptionMessage('Invalid LineString Point value of type "integer"');
         new LineString(array(1, 2, 3 ,4));
     }
 
