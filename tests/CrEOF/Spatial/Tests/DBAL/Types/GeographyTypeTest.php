@@ -129,7 +129,7 @@ class GeographyTypeTest extends OrmTestCase
 
     public function testBadGeographyValue()
     {
-        $this->expectException('PHPUnit_Framework_Error');
+        $this->expectException(\PHPUnit\Framework\Error::class);
         $entity = new GeographyEntity();
 
         try {

@@ -1,6 +1,6 @@
 vendor/
-composer.lock*
+composer.lock
 doctrine2-spatial.iml
-.idea*
 .idea/*
+.phpunit.result.cache
 /nbproject

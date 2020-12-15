@@ -99,11 +99,11 @@ class STSummaryTest extends OrmTestCase
 
         $this->assertCount(3, $result);
         $this->assertEquals($entity1, $result[0][0]);
-        $this->assertRegExp('/^Point\[[^G]*\]/', $result[0][1]);
+        $this->assertMatchesRegularExpression('/^Point\[[^G]*\]/', $result[0][1]);
         $this->assertEquals($entity2, $result[1][0]);
-        $this->assertRegExp('/^LineString\[[^G]*\]/', $result[1][1]);
+        $this->assertMatchesRegularExpression('/^LineString\[[^G]*\]/', $result[1][1]);
         $this->assertEquals($entity3, $result[2][0]);
-        $this->assertRegExp('/^Polygon\[[^G]*\]/', $result[2][1]);
+        $this->assertMatchesRegularExpression('/^Polygon\[[^G]*\]/', $result[2][1]);
     }
 
     /**
@@ -152,10 +152,10 @@ class STSummaryTest extends OrmTestCase
 
         $this->assertCount(3, $result);
         $this->assertEquals($entity1, $result[0][0]);
-        $this->assertRegExp('/^Point\[.*G.*\]/', $result[0][1]);
+        $this->assertMatchesRegularExpression('/^Point\[.*G.*\]/', $result[0][1]);
         $this->assertEquals($entity2, $result[1][0]);
-        $this->assertRegExp('/^LineString\[.*G.*\]/', $result[1][1]);
+        $this->assertMatchesRegularExpression('/^LineString\[.*G.*\]/', $result[1][1]);
         $this->assertEquals($entity3, $result[2][0]);
-        $this->assertRegExp('/^Polygon\[.*G.*\]/', $result[2][1]);
+        $this->assertMatchesRegularExpression('/^Polygon\[.*G.*\]/', $result[2][1]);
     }
 }
