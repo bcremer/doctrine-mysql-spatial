@@ -22,14 +22,14 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\ORM\Query;
+namespace Bcremer\Spatial\Tests\ORM\Query;
 
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
-use CrEOF\Spatial\Tests\Fixtures\GeometryEntity;
-use CrEOF\Spatial\Tests\Fixtures\PolygonEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\PHP\Types\Geometry\Polygon;
+use Bcremer\Spatial\Tests\Fixtures\GeometryEntity;
+use Bcremer\Spatial\Tests\Fixtures\PolygonEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Version;
 
@@ -71,7 +71,7 @@ class WrappingTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $dql = 'SELECT p, ST_Contains(p.polygon, :geometry) FROM CrEOF\Spatial\Tests\Fixtures\PolygonEntity p';
+        $dql = 'SELECT p, ST_Contains(p.polygon, :geometry) FROM Bcremer\Spatial\Tests\Fixtures\PolygonEntity p';
 
         $query = $this->getEntityManager()->createQuery($dql);
 
@@ -99,7 +99,7 @@ class WrappingTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query = $this->getEntityManager()->createQuery('SELECT g FROM CrEOF\Spatial\Tests\Fixtures\GeometryEntity g WHERE g.geometry = :geometry');
+        $query = $this->getEntityManager()->createQuery('SELECT g FROM Bcremer\Spatial\Tests\Fixtures\GeometryEntity g WHERE g.geometry = :geometry');
 
         $query->setParameter('geometry', new Point(5, 5), 'point');
         $query->processParameterValue('geometry');

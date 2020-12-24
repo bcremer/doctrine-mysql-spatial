@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
+namespace Bcremer\Spatial\Tests\PHP\Types\Geometry;
 
-use CrEOF\Spatial\Exception\InvalidValueException;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -207,7 +207,7 @@ class PointTest extends TestCase
     {
         $this->expectException(InvalidValueException::class);
         $this->expectExceptionMessage(
-            'Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "5", "5", "5", "5"'
+            'Invalid parameters passed to Bcremer\Spatial\PHP\Types\Geometry\Point::__construct: "5", "5", "5", "5"'
         );
         new Point(5, 5, 5, 5);
     }
@@ -216,7 +216,7 @@ class PointTest extends TestCase
     {
         $this->expectException(InvalidValueException::class);
         $this->expectExceptionMessage(
-            'Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: Array, Array, "1234"'
+            'Invalid parameters passed to Bcremer\Spatial\PHP\Types\Geometry\Point::__construct: Array, Array, "1234"'
         );
         new Point([], [], '1234');
     }
@@ -227,7 +227,7 @@ class PointTest extends TestCase
     public function testMissingArguments(): void
     {
         $this->expectException(InvalidValueException::class);
-        $this->expectExceptionMessage('Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct');
+        $this->expectExceptionMessage('Invalid parameters passed to Bcremer\Spatial\PHP\Types\Geometry\Point::__construct');
         new Point();
     }
 
@@ -239,7 +239,7 @@ class PointTest extends TestCase
     {
         $this->expectException(InvalidValueException::class);
         $this->expectExceptionMessage(
-            'Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "", ""'
+            'Invalid parameters passed to Bcremer\Spatial\PHP\Types\Geometry\Point::__construct: "", ""'
         );
         new Point(null, null);
     }
@@ -251,7 +251,7 @@ class PointTest extends TestCase
     {
         $this->expectException(InvalidValueException::class);
         $this->expectExceptionMessage(
-            'Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geometry\Point::__construct: "1", "2", "3", "4", "", "5"'
+            'Invalid parameters passed to Bcremer\Spatial\PHP\Types\Geometry\Point::__construct: "1", "2", "3", "4", "", "5"'
         );
         new Point(1, 2, 3, 4, null, 5);
     }

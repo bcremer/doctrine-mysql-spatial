@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types;
+namespace Bcremer\Spatial\PHP\Types;
 
+use Bcremer\Spatial\Exception\InvalidValueException;
 use CrEOF\Geo\String\Exception\RangeException;
 use CrEOF\Geo\String\Exception\UnexpectedValueException;
 use CrEOF\Geo\String\Parser;
-use CrEOF\Spatial\Exception\InvalidValueException;
 
 /**
  * Abstract point object for POINT spatial types

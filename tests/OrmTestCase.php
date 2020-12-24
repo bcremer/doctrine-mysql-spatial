@@ -22,35 +22,35 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests;
+namespace Bcremer\Spatial\Tests;
 
-use CrEOF\Spatial\DBAL\Types\Geography\LineStringType;
-use CrEOF\Spatial\DBAL\Types\Geography\PointType;
-use CrEOF\Spatial\DBAL\Types\Geography\PolygonType;
-use CrEOF\Spatial\DBAL\Types\GeographyType;
-use CrEOF\Spatial\DBAL\Types\Geometry\MultiPolygonType;
-use CrEOF\Spatial\DBAL\Types\GeometryType;
-use CrEOF\Spatial\Exception\UnsupportedPlatformException;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\MBRContains;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\MBRDisjoint;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STArea;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STAsBinary;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STAsText;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STContains;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STDisjoint;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STEnvelope;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STGeomFromText;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STLength;
-use CrEOF\Spatial\ORM\Query\AST\Functions\MySql\STStartPoint;
-use CrEOF\Spatial\Tests\Fixtures\GeographyEntity;
-use CrEOF\Spatial\Tests\Fixtures\GeoLineStringEntity;
-use CrEOF\Spatial\Tests\Fixtures\GeometryEntity;
-use CrEOF\Spatial\Tests\Fixtures\GeoPolygonEntity;
-use CrEOF\Spatial\Tests\Fixtures\LineStringEntity;
-use CrEOF\Spatial\Tests\Fixtures\MultiPolygonEntity;
-use CrEOF\Spatial\Tests\Fixtures\NoHintGeometryEntity;
-use CrEOF\Spatial\Tests\Fixtures\PointEntity;
-use CrEOF\Spatial\Tests\Fixtures\PolygonEntity;
+use Bcremer\Spatial\DBAL\Types\Geography\LineStringType;
+use Bcremer\Spatial\DBAL\Types\Geography\PointType;
+use Bcremer\Spatial\DBAL\Types\Geography\PolygonType;
+use Bcremer\Spatial\DBAL\Types\GeographyType;
+use Bcremer\Spatial\DBAL\Types\Geometry\MultiPolygonType;
+use Bcremer\Spatial\DBAL\Types\GeometryType;
+use Bcremer\Spatial\Exception\UnsupportedPlatformException;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\MBRContains;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\MBRDisjoint;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STArea;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STAsBinary;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STAsText;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STContains;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STDisjoint;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STEnvelope;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STGeomFromText;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STLength;
+use Bcremer\Spatial\ORM\Query\AST\Functions\MySql\STStartPoint;
+use Bcremer\Spatial\Tests\Fixtures\GeographyEntity;
+use Bcremer\Spatial\Tests\Fixtures\GeoLineStringEntity;
+use Bcremer\Spatial\Tests\Fixtures\GeometryEntity;
+use Bcremer\Spatial\Tests\Fixtures\GeoPolygonEntity;
+use Bcremer\Spatial\Tests\Fixtures\LineStringEntity;
+use Bcremer\Spatial\Tests\Fixtures\MultiPolygonEntity;
+use Bcremer\Spatial\Tests\Fixtures\NoHintGeometryEntity;
+use Bcremer\Spatial\Tests\Fixtures\PointEntity;
+use Bcremer\Spatial\Tests\Fixtures\PolygonEntity;
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DBALException;
@@ -152,9 +152,9 @@ abstract class OrmTestCase extends TestCase
 
     private static array $types = [
         'geometry' => GeometryType::class,
-        'point' => \CrEOF\Spatial\DBAL\Types\Geometry\PointType::class,
-        'linestring' => \CrEOF\Spatial\DBAL\Types\Geometry\LineStringType::class,
-        'polygon' => \CrEOF\Spatial\DBAL\Types\Geometry\PolygonType::class,
+        'point' => \Bcremer\Spatial\DBAL\Types\Geometry\PointType::class,
+        'linestring' => \Bcremer\Spatial\DBAL\Types\Geometry\LineStringType::class,
+        'polygon' => \Bcremer\Spatial\DBAL\Types\Geometry\PolygonType::class,
         'multipolygon' => MultiPolygonType::class,
         'geography' => GeographyType::class,
         'geopoint' => PointType::class,
@@ -202,7 +202,7 @@ abstract class OrmTestCase extends TestCase
 
         $config->setMetadataCacheImpl(new ArrayCache());
         $config->setProxyDir(__DIR__ . '/Proxies');
-        $config->setProxyNamespace('CrEOF\Spatial\Tests\Proxies');
+        $config->setProxyNamespace('Bcremer\Spatial\Tests\Proxies');
         $config->setMetadataDriverImpl($config->newDefaultAnnotationDriver([realpath(__DIR__ . '/Fixtures')], true));
 
         return EntityManager::create(static::getConnection(), $config);

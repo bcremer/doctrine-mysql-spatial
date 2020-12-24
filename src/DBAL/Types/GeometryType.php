@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\DBAL\Types;
+namespace Bcremer\Spatial\DBAL\Types;
 
 /**
  * Doctrine GEOMETRY type

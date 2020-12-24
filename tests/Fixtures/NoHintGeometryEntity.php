@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\Fixtures;
+namespace Bcremer\Spatial\Tests\Fixtures;
 
 /**
  * Geometry entity without type hint

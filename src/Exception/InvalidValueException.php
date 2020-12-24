@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Exception;
+namespace Bcremer\Spatial\Exception;
 
 use Exception;
 

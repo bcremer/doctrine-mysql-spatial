@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\ORM\Query\AST\Functions\MySql;
+namespace Bcremer\Spatial\Tests\ORM\Query\AST\Functions\MySql;
 
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\Tests\Fixtures\LineStringEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\Tests\Fixtures\LineStringEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 
 /**
  * StartPoint DQL function tests
@@ -66,7 +66,7 @@ class STStartPointTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query = $this->getEntityManager()->createQuery('SELECT ST_AsText(ST_StartPoint(l.lineString)) FROM CrEOF\Spatial\Tests\Fixtures\LineStringEntity l');
+        $query = $this->getEntityManager()->createQuery('SELECT ST_AsText(ST_StartPoint(l.lineString)) FROM Bcremer\Spatial\Tests\Fixtures\LineStringEntity l');
 
         $result = $query->getResult();
 
@@ -104,7 +104,7 @@ class STStartPointTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query  = $this->getEntityManager()->createQuery('SELECT l FROM CrEOF\Spatial\Tests\Fixtures\LineStringEntity l WHERE ST_StartPoint(l.lineString) = ST_GeomFromText(:p1)');
+        $query  = $this->getEntityManager()->createQuery('SELECT l FROM Bcremer\Spatial\Tests\Fixtures\LineStringEntity l WHERE ST_StartPoint(l.lineString) = ST_GeomFromText(:p1)');
 
         $query->setParameter('p1', 'POINT(0 0)', 'string');
 
@@ -145,7 +145,7 @@ class STStartPointTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query  = $this->getEntityManager()->createQuery('SELECT l FROM CrEOF\Spatial\Tests\Fixtures\LineStringEntity l WHERE ST_StartPoint(l.lineString) = ST_StartPoint(ST_GeomFromText(:p1))');
+        $query  = $this->getEntityManager()->createQuery('SELECT l FROM Bcremer\Spatial\Tests\Fixtures\LineStringEntity l WHERE ST_StartPoint(l.lineString) = ST_StartPoint(ST_GeomFromText(:p1))');
 
         $query->setParameter('p1', 'LINESTRING(3 3,4 15,5 22)', 'string');
 

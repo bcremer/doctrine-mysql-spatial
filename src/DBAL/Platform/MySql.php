@@ -22,15 +22,15 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\DBAL\Platform;
+namespace Bcremer\Spatial\DBAL\Platform;
 
+use Bcremer\Spatial\DBAL\Types\AbstractSpatialType;
+use Bcremer\Spatial\DBAL\Types\GeographyType;
+use Bcremer\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\PHP\Types\Geography\GeographyInterface;
+use Bcremer\Spatial\PHP\Types\Geometry\GeometryInterface;
 use CrEOF\Geo\WKB\Parser as BinaryParser;
 use CrEOF\Geo\WKT\Parser as StringParser;
-use CrEOF\Spatial\DBAL\Types\AbstractSpatialType;
-use CrEOF\Spatial\DBAL\Types\GeographyType;
-use CrEOF\Spatial\Exception\InvalidValueException;
-use CrEOF\Spatial\PHP\Types\Geography\GeographyInterface;
-use CrEOF\Spatial\PHP\Types\Geometry\GeometryInterface;
 
 /**
  * Abstract spatial platform
@@ -147,7 +147,7 @@ class MySql
         $typeFamily = $type->getTypeFamily();
         $typeName   = strtoupper($value['type']);
 
-        $constName = sprintf('CrEOF\Spatial\PHP\Types\Geometry\GeometryInterface::%s', $typeName);
+        $constName = sprintf('Bcremer\Spatial\PHP\Types\Geometry\GeometryInterface::%s', $typeName);
 
         if (! defined($constName)) {
             // @codeCoverageIgnoreStart
@@ -155,7 +155,7 @@ class MySql
             // @codeCoverageIgnoreEnd
         }
 
-        $class = sprintf('CrEOF\Spatial\PHP\Types\%s\%s', $typeFamily, constant($constName));
+        $class = sprintf('Bcremer\Spatial\PHP\Types\%s\%s', $typeFamily, constant($constName));
 
         return new $class($value['value']);
     }

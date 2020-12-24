@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types\Geometry;
+namespace Bcremer\Spatial\PHP\Types\Geometry;
 
-use CrEOF\Spatial\PHP\Types\AbstractMultiPoint;
+use Bcremer\Spatial\PHP\Types\AbstractMultiPoint;
 
 /**
  * MultiPoint object for MULTIPOINT geometry type

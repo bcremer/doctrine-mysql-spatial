@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\ORM\Query\AST\Functions;
+namespace Bcremer\Spatial\ORM\Query\AST\Functions;
 
 /**
  * Interface to indicate function returns a geometry value

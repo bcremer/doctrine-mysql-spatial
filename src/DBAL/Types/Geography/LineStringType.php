@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\DBAL\Types\Geography;
+namespace Bcremer\Spatial\DBAL\Types\Geography;
 
-use CrEOF\Spatial\DBAL\Types\GeographyType;
+use Bcremer\Spatial\DBAL\Types\GeographyType;
 
 /**
  * Doctrine LINESTRING type

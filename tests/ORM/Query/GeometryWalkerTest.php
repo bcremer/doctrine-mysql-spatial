@@ -22,14 +22,14 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\ORM\Query;
+namespace Bcremer\Spatial\Tests\ORM\Query;
 
-use CrEOF\Spatial\ORM\Query\GeometryWalker;
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
-use CrEOF\Spatial\Tests\Fixtures\LineStringEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\ORM\Query\GeometryWalker;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\PHP\Types\Geometry\Polygon;
+use Bcremer\Spatial\Tests\Fixtures\LineStringEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 use Doctrine\ORM\Query;
 
 /**
@@ -83,7 +83,7 @@ class GeometryWalkerTest extends OrmTestCase
         $startPoint = 'ST_StartPoint';
         $envelope   = 'ST_Envelope';
 
-        $queryString = sprintf('SELECT %s(%s(l.lineString)) FROM CrEOF\Spatial\Tests\Fixtures\LineStringEntity l', $asBinary, $startPoint);
+        $queryString = sprintf('SELECT %s(%s(l.lineString)) FROM Bcremer\Spatial\Tests\Fixtures\LineStringEntity l', $asBinary, $startPoint);
         $query = $this->getEntityManager()->createQuery($queryString);
         $query->setHint(Query::HINT_CUSTOM_OUTPUT_WALKER, GeometryWalker::class);
 
@@ -91,7 +91,7 @@ class GeometryWalkerTest extends OrmTestCase
         $this->assertEquals(new Point(0, 0), $result[0][1]);
         $this->assertEquals(new Point(3, 3), $result[1][1]);
 
-        $queryString = sprintf('SELECT %s(%s(l.lineString)) FROM CrEOF\Spatial\Tests\Fixtures\LineStringEntity l', $asBinary, $envelope);
+        $queryString = sprintf('SELECT %s(%s(l.lineString)) FROM Bcremer\Spatial\Tests\Fixtures\LineStringEntity l', $asBinary, $envelope);
         $query = $this->getEntityManager()->createQuery($queryString);
         $query->setHint(Query::HINT_CUSTOM_OUTPUT_WALKER, GeometryWalker::class);
 
@@ -131,7 +131,7 @@ class GeometryWalkerTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $queryString = 'SELECT ST_AsText(ST_StartPoint(l.lineString)) FROM CrEOF\Spatial\Tests\Fixtures\LineStringEntity l';
+        $queryString = 'SELECT ST_AsText(ST_StartPoint(l.lineString)) FROM Bcremer\Spatial\Tests\Fixtures\LineStringEntity l';
         $query = $this->getEntityManager()->createQuery($queryString);
         $query->setHint(Query::HINT_CUSTOM_OUTPUT_WALKER, GeometryWalker::class);
 
@@ -139,7 +139,7 @@ class GeometryWalkerTest extends OrmTestCase
         $this->assertEquals(new Point(0, 0), $result[0][1]);
         $this->assertEquals(new Point(3, 3), $result[1][1]);
 
-        $queryString = 'SELECT ST_AsText(ST_Envelope(l.lineString)) FROM CrEOF\Spatial\Tests\Fixtures\LineStringEntity l';
+        $queryString = 'SELECT ST_AsText(ST_Envelope(l.lineString)) FROM Bcremer\Spatial\Tests\Fixtures\LineStringEntity l';
         $query = $this->getEntityManager()->createQuery($queryString);
         $query->setHint(Query::HINT_CUSTOM_OUTPUT_WALKER, GeometryWalker::class);
 

@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\ORM\Query\AST\Functions\MySql;
+namespace Bcremer\Spatial\Tests\ORM\Query\AST\Functions\MySql;
 
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\Tests\Fixtures\GeometryEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\Tests\Fixtures\GeometryEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 
 /**
  * STGeomFromText DQL function tests
@@ -59,7 +59,7 @@ class STGeomFromTextTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query  = $this->getEntityManager()->createQuery('SELECT g FROM CrEOF\Spatial\Tests\Fixtures\GeometryEntity g WHERE g.geometry = ST_GeomFromText(:p1)');
+        $query  = $this->getEntityManager()->createQuery('SELECT g FROM Bcremer\Spatial\Tests\Fixtures\GeometryEntity g WHERE g.geometry = ST_GeomFromText(:p1)');
 
         $query->setParameter('p1', 'POINT(5 5)', 'string');
 
@@ -87,7 +87,7 @@ class STGeomFromTextTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query = $this->getEntityManager()->createQuery('SELECT g FROM CrEOF\Spatial\Tests\Fixtures\GeometryEntity g WHERE g.geometry = ST_GeomFromText(:p1)');
+        $query = $this->getEntityManager()->createQuery('SELECT g FROM Bcremer\Spatial\Tests\Fixtures\GeometryEntity g WHERE g.geometry = ST_GeomFromText(:p1)');
 
         $query->setParameter('p1', 'LINESTRING(0 0,5 5,10 10)', 'string');
 

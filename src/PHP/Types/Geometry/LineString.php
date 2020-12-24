@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types\Geometry;
+namespace Bcremer\Spatial\PHP\Types\Geometry;
 
-use CrEOF\Spatial\PHP\Types\AbstractLineString;
+use Bcremer\Spatial\PHP\Types\AbstractLineString;
 
 /**
  * LineString object for LINESTRING geometry type

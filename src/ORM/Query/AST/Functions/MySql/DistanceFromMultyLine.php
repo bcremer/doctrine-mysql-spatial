@@ -1,8 +1,8 @@
 <?php
 
-namespace CrEOF\Spatial\ORM\Query\AST\Functions\MySql;
+namespace Bcremer\Spatial\ORM\Query\AST\Functions\MySql;
 
-use CrEOF\Spatial\ORM\Query\AST\Functions\AbstractSpatialDQLFunction;
+use Bcremer\Spatial\ORM\Query\AST\Functions\AbstractSpatialDQLFunction;
 
 /**
  * Description of STContains

@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\ORM\Query\AST\Functions\MySql;
+namespace Bcremer\Spatial\ORM\Query\AST\Functions\MySql;
 
-use CrEOF\Spatial\ORM\Query\AST\Functions\AbstractSpatialDQLFunction;
-use CrEOF\Spatial\ORM\Query\AST\Functions\ReturnsGeometryInterface;
+use Bcremer\Spatial\ORM\Query\AST\Functions\AbstractSpatialDQLFunction;
+use Bcremer\Spatial\ORM\Query\AST\Functions\ReturnsGeometryInterface;
 
 /**
  * ST_AsBinary DQL function

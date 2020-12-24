@@ -22,14 +22,14 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\DBAL\Types\Geometry;
+namespace Bcremer\Spatial\Tests\DBAL\Types\Geometry;
 
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\MultiPolygon;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
-use CrEOF\Spatial\Tests\Fixtures\MultiPolygonEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\MultiPolygon;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\PHP\Types\Geometry\Polygon;
+use Bcremer\Spatial\Tests\Fixtures\MultiPolygonEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 
 /**
  * MultiPolygonType tests

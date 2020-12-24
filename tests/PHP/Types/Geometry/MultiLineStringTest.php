@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
+namespace Bcremer\Spatial\Tests\PHP\Types\Geometry;
 
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\MultiLineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\MultiLineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
 use PHPUnit\Framework\TestCase;
 
 /**

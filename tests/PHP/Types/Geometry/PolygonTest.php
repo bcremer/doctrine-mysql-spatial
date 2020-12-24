@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
+namespace Bcremer\Spatial\Tests\PHP\Types\Geometry;
 
-use CrEOF\Spatial\Exception\InvalidValueException;
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
+use Bcremer\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\PHP\Types\Geometry\Polygon;
 use PHPUnit\Framework\TestCase;
 
 /**

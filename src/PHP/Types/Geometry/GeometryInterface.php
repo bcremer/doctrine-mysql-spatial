@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types\Geometry;
+namespace Bcremer\Spatial\PHP\Types\Geometry;
 
 /**
  * Geometry interface for Geometry objects

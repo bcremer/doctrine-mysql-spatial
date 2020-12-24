@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\ORM\Query;
+namespace Bcremer\Spatial\ORM\Query;
 
-use CrEOF\Spatial\ORM\Query\AST\Functions\ReturnsGeometryInterface;
+use Bcremer\Spatial\ORM\Query\AST\Functions\ReturnsGeometryInterface;
 use Doctrine\ORM\Query\AST\SelectExpression;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\ORM\Query\SqlWalker;

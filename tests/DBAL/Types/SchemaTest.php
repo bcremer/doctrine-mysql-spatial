@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\DBAL\Types;
+namespace Bcremer\Spatial\Tests\DBAL\Types;
 
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\Tests\OrmTestCase;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Mapping\ClassMetadata;
 

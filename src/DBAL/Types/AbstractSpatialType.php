@@ -22,13 +22,13 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\DBAL\Types;
+namespace Bcremer\Spatial\DBAL\Types;
 
-use CrEOF\Spatial\DBAL\Platform\MySql;
-use CrEOF\Spatial\Exception\InvalidValueException;
-use CrEOF\Spatial\Exception\UnsupportedPlatformException;
-use CrEOF\Spatial\PHP\Types\Geography\GeographyInterface;
-use CrEOF\Spatial\PHP\Types\Geometry\GeometryInterface;
+use Bcremer\Spatial\DBAL\Platform\MySql;
+use Bcremer\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\Exception\UnsupportedPlatformException;
+use Bcremer\Spatial\PHP\Types\Geography\GeographyInterface;
+use Bcremer\Spatial\PHP\Types\Geometry\GeometryInterface;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 

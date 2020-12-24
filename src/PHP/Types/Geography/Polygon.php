@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types\Geography;
+namespace Bcremer\Spatial\PHP\Types\Geography;
 
-use CrEOF\Spatial\PHP\Types\AbstractPolygon;
+use Bcremer\Spatial\PHP\Types\AbstractPolygon;
 
 /**
  * Polygon object for POLYGON geography type

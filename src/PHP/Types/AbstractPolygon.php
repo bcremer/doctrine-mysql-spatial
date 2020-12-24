@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types;
+namespace Bcremer\Spatial\PHP\Types;
 
 /**
  * Abstract Polygon object for POLYGON spatial types

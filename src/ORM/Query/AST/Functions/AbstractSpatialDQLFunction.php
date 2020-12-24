@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\ORM\Query\AST\Functions;
+namespace Bcremer\Spatial\ORM\Query\AST\Functions;
 
-use CrEOF\Spatial\Exception\UnsupportedPlatformException;
+use Bcremer\Spatial\Exception\UnsupportedPlatformException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\AST\Node;

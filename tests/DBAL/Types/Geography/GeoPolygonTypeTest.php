@@ -22,13 +22,13 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\DBAL\Types\Geography;
+namespace Bcremer\Spatial\Tests\DBAL\Types\Geography;
 
-use CrEOF\Spatial\PHP\Types\Geography\LineString;
-use CrEOF\Spatial\PHP\Types\Geography\Point;
-use CrEOF\Spatial\PHP\Types\Geography\Polygon;
-use CrEOF\Spatial\Tests\Fixtures\GeoPolygonEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\PHP\Types\Geography\LineString;
+use Bcremer\Spatial\PHP\Types\Geography\Point;
+use Bcremer\Spatial\PHP\Types\Geography\Polygon;
+use Bcremer\Spatial\Tests\Fixtures\GeoPolygonEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 
 /**
  * PolygonType tests

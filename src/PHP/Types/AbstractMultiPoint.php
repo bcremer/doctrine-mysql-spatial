@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types;
+namespace Bcremer\Spatial\PHP\Types;
 
-use CrEOF\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\Exception\InvalidValueException;
 
 /**
  * Abstract MultiPoint object for MULTIPOINT spatial types

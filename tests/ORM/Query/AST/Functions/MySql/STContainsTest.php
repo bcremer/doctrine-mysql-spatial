@@ -22,13 +22,13 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\ORM\Query\AST\Functions\MySql;
+namespace Bcremer\Spatial\Tests\ORM\Query\AST\Functions\MySql;
 
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
-use CrEOF\Spatial\Tests\Fixtures\PolygonEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\PHP\Types\Geometry\Polygon;
+use Bcremer\Spatial\Tests\Fixtures\PolygonEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 
 /**
  * Contains DQL function tests
@@ -79,7 +79,7 @@ class STContainsTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query  = $this->getEntityManager()->createQuery('SELECT p, ST_Contains(p.polygon, ST_GeomFromText(:p1)) FROM CrEOF\Spatial\Tests\Fixtures\PolygonEntity p');
+        $query  = $this->getEntityManager()->createQuery('SELECT p, ST_Contains(p.polygon, ST_GeomFromText(:p1)) FROM Bcremer\Spatial\Tests\Fixtures\PolygonEntity p');
         $query->setParameter('p1', 'POINT(2 2)', 'string');
         $result = $query->getResult();
 
@@ -121,7 +121,7 @@ class STContainsTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query  = $this->getEntityManager()->createQuery('SELECT p FROM CrEOF\Spatial\Tests\Fixtures\PolygonEntity p WHERE ST_Contains(p.polygon, ST_GeomFromText(:p1)) = 1');
+        $query  = $this->getEntityManager()->createQuery('SELECT p FROM Bcremer\Spatial\Tests\Fixtures\PolygonEntity p WHERE ST_Contains(p.polygon, ST_GeomFromText(:p1)) = 1');
         $query->setParameter('p1', 'POINT(6 6)', 'string'); // POINT(6 6) is inside the hole
         $result = $query->getResult();
 
@@ -130,7 +130,7 @@ class STContainsTest extends OrmTestCase
 
         $this->getEntityManager()->clear();
 
-        $query  = $this->getEntityManager()->createQuery('SELECT p FROM CrEOF\Spatial\Tests\Fixtures\PolygonEntity p WHERE ST_Contains(p.polygon, ST_GeomFromText(:p1)) = 1');
+        $query  = $this->getEntityManager()->createQuery('SELECT p FROM Bcremer\Spatial\Tests\Fixtures\PolygonEntity p WHERE ST_Contains(p.polygon, ST_GeomFromText(:p1)) = 1');
         $query->setParameter('p1', 'POINT(2 2)', 'string');
         $result = $query->getResult();
 

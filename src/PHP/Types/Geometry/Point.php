@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types\Geometry;
+namespace Bcremer\Spatial\PHP\Types\Geometry;
 
-use CrEOF\Spatial\PHP\Types\AbstractPoint;
+use Bcremer\Spatial\PHP\Types\AbstractPoint;
 
 /**
  * Point object for POINT geometry type

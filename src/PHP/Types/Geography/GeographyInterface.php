@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types\Geography;
+namespace Bcremer\Spatial\PHP\Types\Geography;
 
 /**
  * Geography interface for Geography objects

@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\Fixtures;
+namespace Bcremer\Spatial\Tests\Fixtures;
 
-use CrEOF\Spatial\PHP\Types\Geometry\GeometryInterface;
+use Bcremer\Spatial\PHP\Types\Geometry\GeometryInterface;
 
 /**
  * Geometry entity

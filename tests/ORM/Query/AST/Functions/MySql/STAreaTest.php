@@ -22,13 +22,13 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\ORM\Query\AST\Functions\MySql;
+namespace Bcremer\Spatial\Tests\ORM\Query\AST\Functions\MySql;
 
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
-use CrEOF\Spatial\Tests\Fixtures\PolygonEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\PHP\Types\Geometry\Polygon;
+use Bcremer\Spatial\Tests\Fixtures\PolygonEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 
 /**
  * Area DQL function tests
@@ -128,7 +128,7 @@ class STAreaTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query  = $this->getEntityManager()->createQuery('SELECT ST_Area(p.polygon) FROM CrEOF\Spatial\Tests\Fixtures\PolygonEntity p');
+        $query  = $this->getEntityManager()->createQuery('SELECT ST_Area(p.polygon) FROM Bcremer\Spatial\Tests\Fixtures\PolygonEntity p');
         $result = $query->getResult();
 
         $this->assertEquals(100, $result[0][1]);
@@ -218,7 +218,7 @@ class STAreaTest extends OrmTestCase
         $this->getEntityManager()->flush();
         $this->getEntityManager()->clear();
 
-        $query  = $this->getEntityManager()->createQuery('SELECT p FROM CrEOF\Spatial\Tests\Fixtures\PolygonEntity p WHERE ST_Area(p.polygon) < 50');
+        $query  = $this->getEntityManager()->createQuery('SELECT p FROM Bcremer\Spatial\Tests\Fixtures\PolygonEntity p WHERE ST_Area(p.polygon) < 50');
         $result = $query->getResult();
 
         $this->assertCount(1, $result);

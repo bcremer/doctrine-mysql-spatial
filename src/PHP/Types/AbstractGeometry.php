@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types;
+namespace Bcremer\Spatial\PHP\Types;
 
-use CrEOF\Spatial\Exception\InvalidValueException;
-use CrEOF\Spatial\PHP\Types\Geometry\GeometryInterface;
+use Bcremer\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\PHP\Types\Geometry\GeometryInterface;
 
 /**
  * Abstract geometry object for spatial types

@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types\Geometry;
+namespace Bcremer\Spatial\PHP\Types\Geometry;
 
-use CrEOF\Spatial\PHP\Types\AbstractMultiLineString;
+use Bcremer\Spatial\PHP\Types\AbstractMultiLineString;
 
 /**
  * MultiLineString object for MULTILINESTRING geometry type

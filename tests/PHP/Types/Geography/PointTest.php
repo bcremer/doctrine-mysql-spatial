@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\PHP\Types\Geography;
+namespace Bcremer\Spatial\Tests\PHP\Types\Geography;
 
-use CrEOF\Spatial\Exception\InvalidValueException;
-use CrEOF\Spatial\PHP\Types\Geography\Point;
+use Bcremer\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\PHP\Types\Geography\Point;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -192,21 +192,21 @@ class PointTest extends TestCase
     public function testPointFromArrayWithTooManyElements(): void
     {
         $this->expectException(InvalidValueException::class);
-        $this->expectExceptionMessage('Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geography\Point::__construct');
+        $this->expectExceptionMessage('Invalid parameters passed to Bcremer\Spatial\PHP\Types\Geography\Point::__construct');
         new Point([5, 5, 5]);
     }
 
     public function testPointTooManyArguments(): void
     {
         $this->expectException(InvalidValueException::class);
-        $this->expectExceptionMessage('Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geography\Point::__construct');
+        $this->expectExceptionMessage('Invalid parameters passed to Bcremer\Spatial\PHP\Types\Geography\Point::__construct');
         new Point(5, 5, 5);
     }
 
     public function testPointWrongArgumentTypes(): void
     {
         $this->expectException(InvalidValueException::class);
-        $this->expectExceptionMessage('Invalid parameters passed to CrEOF\Spatial\PHP\Types\Geography\Point::__construct:');
+        $this->expectExceptionMessage('Invalid parameters passed to Bcremer\Spatial\PHP\Types\Geography\Point::__construct:');
         new Point([], []);
     }
 

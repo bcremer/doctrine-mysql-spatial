@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\PHP\Types\Geometry;
+namespace Bcremer\Spatial\Tests\PHP\Types\Geometry;
 
-use CrEOF\Spatial\Exception\InvalidValueException;
-use CrEOF\Spatial\PHP\Types\Geometry\MultiPoint;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\PHP\Types\Geometry\MultiPoint;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
 use PHPUnit\Framework\TestCase;
 
 /**

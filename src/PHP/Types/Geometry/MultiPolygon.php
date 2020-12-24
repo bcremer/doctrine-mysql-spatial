@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\PHP\Types\Geometry;
+namespace Bcremer\Spatial\PHP\Types\Geometry;
 
-use CrEOF\Spatial\PHP\Types\AbstractMultiPolygon;
+use Bcremer\Spatial\PHP\Types\AbstractMultiPolygon;
 
 /**
  * MultiPolygon object for MULTIPOLYGON geometry type

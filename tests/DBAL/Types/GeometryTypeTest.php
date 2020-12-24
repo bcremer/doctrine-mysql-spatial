@@ -22,15 +22,15 @@
  * SOFTWARE.
  */
 
-namespace CrEOF\Spatial\Tests\DBAL\Types;
+namespace Bcremer\Spatial\Tests\DBAL\Types;
 
-use CrEOF\Spatial\Exception\InvalidValueException;
-use CrEOF\Spatial\PHP\Types\Geometry\LineString;
-use CrEOF\Spatial\PHP\Types\Geometry\Point;
-use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
-use CrEOF\Spatial\Tests\Fixtures\GeometryEntity;
-use CrEOF\Spatial\Tests\Fixtures\NoHintGeometryEntity;
-use CrEOF\Spatial\Tests\OrmTestCase;
+use Bcremer\Spatial\Exception\InvalidValueException;
+use Bcremer\Spatial\PHP\Types\Geometry\LineString;
+use Bcremer\Spatial\PHP\Types\Geometry\Point;
+use Bcremer\Spatial\PHP\Types\Geometry\Polygon;
+use Bcremer\Spatial\Tests\Fixtures\GeometryEntity;
+use Bcremer\Spatial\Tests\Fixtures\NoHintGeometryEntity;
+use Bcremer\Spatial\Tests\OrmTestCase;
 
 /**
  * Doctrine GeometryType tests

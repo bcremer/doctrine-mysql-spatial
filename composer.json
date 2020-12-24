@@ -1,5 +1,5 @@
 {
-    "name": "creof/doctrine2-spatial",
+    "name": "bcremer/doctrine-mysql-spatial",
     "type": "library",
     "description": "Doctrine support for MySQL spatial types and functions",
     "keywords": ["orm", "dbal", "database", "mysql", "opengis", "gis", "spatial", "geometry", "geography"],
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "CrEOF\\Spatial\\": "src"
+            "Bcremer\\Spatial\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CrEOF\\Spatial\\Tests\\": "tests"
+            "Bcremer\\Spatial\\Tests\\": "tests"
         }
     },
     "scripts": {
