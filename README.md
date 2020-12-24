@@ -26,5 +26,5 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 [ico-version]: https://img.shields.io/packagist/v/bcremer/doctrine-mysql-spatial.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [link-packagist]: https://packagist.org/packages/bcremer/doctrine-mysql-spatial
-[ico-ghactions]: https://github.com/bcremer/doctrine-mysql-spatial/workflows/Build/badge.svg
-[link-ghactions]: https://github.com/bcremer/doctrine-mysql-spatial/actions?query=workflow%3ABuild
+[ico-ghactions]: https://github.com/bcremer/doctrine-mysql-spatial/workflows/Continuous%20Integration/badge.svg
+[link-ghactions]: https://github.com/bcremer/doctrine-mysql-spatial/actions
