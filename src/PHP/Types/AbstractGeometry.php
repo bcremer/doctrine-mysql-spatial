@@ -188,7 +188,17 @@ abstract class AbstractGeometry implements GeometryInterface
      */
     private function toStringPoint(array $point): string
     {
-        return vsprintf('%s %s', $point);
+        $localeIndependentFloatToString = static fn($number): string => sprintf('%.8F', $number);
+
+        $removeTrailingZeroAfterDecimalPoint = static fn(string $number): string => (strpos($number, '.') !== false)
+            ? rtrim(rtrim($number, '0'), '.')
+            : $number;
+
+        return sprintf(
+            '%s %s',
+            $removeTrailingZeroAfterDecimalPoint($localeIndependentFloatToString($point[0])),
+            $removeTrailingZeroAfterDecimalPoint($localeIndependentFloatToString($point[1])),
+        );
     }
 
     /**
